@@ -1,3 +1,5 @@
 *.exe
 *.local
 *.tvsconfig
+DelphiLogger_XE2.res
+UnitTest.res
