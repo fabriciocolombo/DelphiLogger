@@ -12,11 +12,6 @@ type
 implementation
 
 initialization
-  GlobalContainer.RegisterType<TSpringLogger>
-                 .Implements<Spring.Services.Logging.ILogger>
-                 .Implements<Delphi.Log.ILogger>
-                 .AsSingleton;
-
   GlobalContainer.RegisterType<TLoggerFactory>
                  .Implements<Spring.Services.Logging.ILoggerFactory>
                  .Implements<Delphi.Log.ILoggerFactory>
