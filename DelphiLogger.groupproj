@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{293EF020-5207-440C-825F-80D82ADDC6C2}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="packages\XE2\DelphiLogger_XE2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="unitTest\UnitTest.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="DelphiLogger_XE2">
+			<MSBuild Projects="packages\XE2\DelphiLogger_XE2.dproj"/>
+		</Target>
+		<Target Name="DelphiLogger_XE2:Clean">
+			<MSBuild Projects="packages\XE2\DelphiLogger_XE2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="DelphiLogger_XE2:Make">
+			<MSBuild Projects="packages\XE2\DelphiLogger_XE2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="UnitTest">
+			<MSBuild Projects="unitTest\UnitTest.dproj"/>
+		</Target>
+		<Target Name="UnitTest:Clean">
+			<MSBuild Projects="unitTest\UnitTest.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="UnitTest:Make">
+			<MSBuild Projects="unitTest\UnitTest.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="DelphiLogger_XE2;UnitTest"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="DelphiLogger_XE2:Clean;UnitTest:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="DelphiLogger_XE2:Make;UnitTest:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

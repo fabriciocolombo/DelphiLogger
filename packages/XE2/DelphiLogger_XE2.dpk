@@ -1,0 +1,46 @@
+package DelphiLogger_XE2;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  CodeSiteExpressPkg;
+
+contains
+  Delphi.Log.GUI in '..\..\src\gui\Delphi.Log.GUI.pas' {Frm_Log},
+  Delphi.IO.RollingFileWriter in '..\..\src\Delphi.IO.RollingFileWriter.pas',
+  Delphi.Log.Console in '..\..\src\Delphi.Log.Console.pas',
+  Delphi.Log.DelegateAppender in '..\..\src\Delphi.Log.DelegateAppender.pas',
+  Delphi.Log.Logger in '..\..\src\Delphi.Log.Logger.pas',
+  Delphi.Log in '..\..\src\Delphi.Log.pas',
+  Delphi.Log.RollingFileAppender in '..\..\src\Delphi.Log.RollingFileAppender.pas';
+
+end.
+
