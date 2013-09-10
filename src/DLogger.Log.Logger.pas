@@ -1,15 +1,15 @@
-unit Delphi.Log.Logger;
+unit DLogger.Log.Logger;
 
 interface
 
-uses Delphi.Log,
+uses DLogger.Log,
      System.Generics.Collections, System.SysUtils;
 
 type
   TLogger = class(TInterfacedObject, ILogger)
   private
     FName: String;
-    FAppenders: TList<Pointer>;
+    FLoggerNotifyAppenders: TLoggerNotifyAppenders;
     FLogLevel: TLogLevel;
 
     function GetLogLevelName(ALogLevel: TLogLevel): string;
@@ -21,8 +21,6 @@ type
   public
     function GetName: string;
 
-    procedure AddAppender(Appender: ILogAppender);
-
     function GetIsDebugEnabled: Boolean;
     function GetIsInfoEnabled: Boolean;
     function GetIsWarnEnabled: Boolean;
@@ -32,8 +30,7 @@ type
 
     procedure SetLogLevel(const Value: TLogLevel);
 
-    constructor Create(AName: String; ALevel: TLogLevel; AAppenders: TList<ILogAppender>);
-    destructor Destroy;override;
+    constructor Create(AName: String; ALevel: TLogLevel; ALoggerNotifyAppenders: TLoggerNotifyAppenders);
 
     procedure Trace(const msg: string);
     procedure TraceFormat(const msg: string; const args: array of const);
@@ -75,30 +72,11 @@ const
 
 { TLogger }
 
-procedure TLogger.AddAppender(Appender: ILogAppender);
-var
-  vPointer: Pointer;
-begin
-  vPointer := Pointer(IInterface(Appender));
-
-  if not FAppenders.Contains(vPointer) then
-  begin
-    FAppenders.Add(vPointer);
-  end;
-end;
-
-constructor TLogger.Create(AName: String; ALevel: TLogLevel; AAppenders: TList<ILogAppender>);
-var
-  vAppender: ILogAppender;
+constructor TLogger.Create(AName: String; ALevel: TLogLevel; ALoggerNotifyAppenders: TLoggerNotifyAppenders);
 begin
   FName := AName;
   FLogLevel := ALevel;
-  FAppenders := TList<Pointer>.Create;
-
-  for vAppender in AAppenders do
-  begin
-    AddAppender(vAppender);
-  end;
+  FLoggerNotifyAppenders := ALoggerNotifyAppenders;
 end;
 
 function TLogger.GetIsDebugEnabled: Boolean;
@@ -133,20 +111,13 @@ end;
 
 procedure TLogger.Log(Level: TLogLevel; value: string);
 var
-  vPointer: Pointer;
-  vAppender: ILogAppender;
   vFullMessage: string;
 begin
   if Level >= FLogLevel then
   begin
     vFullMessage := Format('%s %s %s - %s', [GetTimeStamp, GetLogLevelName(Level), FName, Value]);
 
-    for vPointer in FAppenders do
-    begin
-      vAppender := ILogAppender(vPointer);
-
-      vAppender.Append(Level, vFullMessage);
-    end;
+    FLoggerNotifyAppenders(Level, vFullMessage);
   end;
 end;
 
@@ -190,12 +161,6 @@ end;
 procedure TLogger.DebugFormat(const msg: string; const args: array of const);
 begin
   Log(TLogLevel.DEBUG, format(msg, args));
-end;
-
-destructor TLogger.Destroy;
-begin
-  FAppenders.Free;
-  inherited;
 end;
 
 procedure TLogger.Error(const msg: string);

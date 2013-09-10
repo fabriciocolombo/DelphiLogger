@@ -1,4 +1,4 @@
-unit Delphi.Log;
+unit DLogger.Log;
 
 interface
 
@@ -19,8 +19,6 @@ type
     function GetName: string;
 
     procedure SetLogLevel(const Value: TLogLevel);
-
-    procedure AddAppender(Appender: ILogAppender);
 
     function GetIsDebugEnabled: Boolean;
     function GetIsInfoEnabled: Boolean;
@@ -77,17 +75,23 @@ type
     procedure SetLogLevel(ALogLevel: TLogLevel);
   end;
 
+  TLoggerNotifyAppenders = procedure (const Level: TLogLevel; const Value: string) of object;
+
   TLoggerFactory = class(TInterfacedObject, ILoggerFactory)
   strict private
     class var Instance: ILoggerFactory;
     class var FLoggers: TDictionary<String, ILogger>;
     class var FAppenders: TList<ILogAppender>;
     class var FLogLevel: TLogLevel;
-    class var FSync: TMultiReadExclusiveWriteSynchronizer;
+    class var FSyncAppenders: TMultiReadExclusiveWriteSynchronizer;
+    class var FSyncLoggers: TMultiReadExclusiveWriteSynchronizer;
   strict protected
     class constructor Create;
     class destructor Destroy;
   private
+    procedure NotifyAppenders(const Level: TLogLevel; const Value: string);
+  protected
+    function CreateLogger(const Name: string): ILogger;virtual;
   public
     class function GetInstance: ILoggerFactory;
 
@@ -108,7 +112,7 @@ function LoggerFactory: ILoggerFactory;
 
 implementation
 
-uses Delphi.Log.RollingFileAppender, Delphi.Log.Logger;
+uses DLogger.Log.RollingFileAppender, DLogger.Log.Logger;
 
 function LoggerFactory: ILoggerFactory;
 begin
@@ -117,21 +121,15 @@ end;
 { TLoggerFactory }
 
 procedure TLoggerFactory.AddAppender(Appender: ILogAppender);
-var
-  Logger: ILogger;
 begin
-  FSync.BeginRead;
+  FSyncAppenders.BeginWrite;
   try
     if not FAppenders.Contains(Appender) then
     begin
       FAppenders.Add(Appender);
-      for Logger in FLoggers.Values do
-      begin
-        Logger.AddAppender(Appender);
-      end;
     end;
   finally
-    FSync.EndRead;
+    FSyncAppenders.EndWrite;
   end;
 end;
 
@@ -143,11 +141,17 @@ end;
 
 class constructor TLoggerFactory.Create;
 begin
-  TLoggerFactory.FSync := TMultiReadExclusiveWriteSynchronizer.Create;
+  TLoggerFactory.FSyncAppenders := TMultiReadExclusiveWriteSynchronizer.Create;
+  TLoggerFactory.FSyncLoggers := TMultiReadExclusiveWriteSynchronizer.Create;
   TLoggerFactory.Instance := TLoggerFactory.Create;
 
   TLoggerFactory.FLoggers := TDictionary<String, ILogger>.Create;
   TLoggerFactory.FAppenders := TList<ILogAppender>.Create;
+end;
+
+function TLoggerFactory.CreateLogger(const Name: string): ILogger;
+begin
+  Result := TLogger.Create(name, FLogLevel, NotifyAppenders);
 end;
 
 class destructor TLoggerFactory.Destroy;
@@ -156,7 +160,8 @@ begin
   TLoggerFactory.FAppenders.Clear;
   TLoggerFactory.FAppenders.Free;
   TLoggerFactory.Instance := nil;
-  TLoggerFactory.FSync.Free;
+  TLoggerFactory.FSyncAppenders.Free;
+  TLoggerFactory.FSyncLoggers.Free;
 end;
 
 function TLoggerFactory.GetDefaultLogger: ILogger;
@@ -179,6 +184,21 @@ begin
   Result := FLogLevel;
 end;
 
+procedure TLoggerFactory.NotifyAppenders(const Level: TLogLevel;const Value: string);
+var
+  vAppender: ILogAppender;
+begin
+  FSyncAppenders.BeginRead;
+  try
+    for vAppender in FAppenders do
+    begin
+      vAppender.Append(Level, Value);
+    end;
+  finally
+    FSyncAppenders.EndRead;
+  end;
+end;
+
 procedure TLoggerFactory.SetLogLevel(ALogLevel: TLogLevel);
 var
   Logger: ILogger;
@@ -187,35 +207,35 @@ begin
   begin
     FLogLevel := ALogLevel;
 
-    FSync.BeginRead;
+    FSyncLoggers.BeginRead;
     try
       for Logger in FLoggers.Values do
       begin
         Logger.SetLogLevel(FLogLevel);
       end;
     finally
-      FSync.EndRead;
+      FSyncLoggers.EndRead;
     end;
   end;
 end;
 
 function TLoggerFactory.GetLogger(const Name: string): ILogger;
 begin
-  FSync.BeginRead;
+  FSyncLoggers.BeginRead;
   try
     if not FLoggers.TryGetValue(name, Result) then
     begin
-      FSync.BeginWrite;
+      FSyncLoggers.BeginWrite;
       try
-        Result := TLogger.Create(name, FLogLevel, FAppenders);
+        Result := CreateLogger(Name);
 
         FLoggers.Add(name, Result);
       finally
-        FSync.EndWrite;
+        FSyncLoggers.EndWrite;
       end;
     end;
   finally
-    FSync.EndRead;
+    FSyncLoggers.EndRead;
   end;
 end;
 

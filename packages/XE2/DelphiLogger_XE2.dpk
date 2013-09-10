@@ -34,13 +34,14 @@ requires
   CodeSiteExpressPkg;
 
 contains
-  Delphi.Log.GUI in '..\..\src\gui\Delphi.Log.GUI.pas' {Frm_Log},
-  Delphi.IO.RollingFileWriter in '..\..\src\Delphi.IO.RollingFileWriter.pas',
-  Delphi.Log.Console in '..\..\src\Delphi.Log.Console.pas',
-  Delphi.Log.DelegateAppender in '..\..\src\Delphi.Log.DelegateAppender.pas',
-  Delphi.Log.Logger in '..\..\src\Delphi.Log.Logger.pas',
-  Delphi.Log in '..\..\src\Delphi.Log.pas',
-  Delphi.Log.RollingFileAppender in '..\..\src\Delphi.Log.RollingFileAppender.pas';
+  DLogger.Log.GUI in '..\..\src\gui\DLogger.Log.GUI.pas' {Frm_Log},
+  DLogger.IO.RollingFileWriter in '..\..\src\DLogger.IO.RollingFileWriter.pas',
+  DLogger.Log.Console in '..\..\src\DLogger.Log.Console.pas',
+  DLogger.Log.DelegateAppender in '..\..\src\DLogger.Log.DelegateAppender.pas',
+  DLogger.Log.Logger in '..\..\src\DLogger.Log.Logger.pas',
+  DLogger.Log in '..\..\src\DLogger.Log.pas',
+  DLogger.Log.RollingFileAppender in '..\..\src\DLogger.Log.RollingFileAppender.pas',
+  DLogger.Log.RichEditAppender in '..\..\src\DLogger.Log.RichEditAppender.pas';
 
 end.
 

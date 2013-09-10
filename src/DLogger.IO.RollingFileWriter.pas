@@ -1,4 +1,4 @@
-unit Delphi.IO.RollingFileWriter;
+unit DLogger.IO.RollingFileWriter;
 
 interface
 

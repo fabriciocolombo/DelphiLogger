@@ -1,9 +1,9 @@
 object Frm_Log: TFrm_Log
-  Left = 0
-  Top = 0
+  Left = 157
+  Top = 162
   Caption = 'Log'
-  ClientHeight = 432
-  ClientWidth = 738
+  ClientHeight = 448
+  ClientWidth = 1023
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,6 +13,7 @@ object Frm_Log: TFrm_Log
   FormStyle = fsStayOnTop
   KeyPreview = True
   OldCreateOrder = False
+  Position = poDesigned
   OnClose = FormClose
   OnHide = FormHide
   OnKeyDown = FormKeyDown
@@ -22,8 +23,8 @@ object Frm_Log: TFrm_Log
   object Memo_Log: TRichEdit
     Left = 0
     Top = 0
-    Width = 738
-    Height = 391
+    Width = 1023
+    Height = 407
     Align = alClient
     Font.Charset = ANSI_CHARSET
     Font.Color = clBlack
@@ -38,13 +39,13 @@ object Frm_Log: TFrm_Log
   end
   object Panel1: TPanel
     Left = 0
-    Top = 391
-    Width = 738
+    Top = 407
+    Width = 1023
     Height = 41
     Align = alBottom
     TabOrder = 1
     object btnFechar: TButton
-      Left = 329
+      Left = 473
       Top = 8
       Width = 75
       Height = 25

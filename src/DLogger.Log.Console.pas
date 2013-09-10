@@ -1,8 +1,8 @@
-unit Delphi.Log.Console;
+unit DLogger.Log.Console;
 
 interface
 
-uses Delphi.Log, WinApi.Windows;
+uses DLogger.Log, WinApi.Windows;
 
 type
   TConsoleAppender = class(TInterfacedObject, ILogAppender)
@@ -46,6 +46,6 @@ begin
 end;
 
 initialization
-  Delphi.Log.LoggerFactory.AddAppender(TConsoleAppender.Create);
+  DLogger.Log.LoggerFactory.AddAppender(TConsoleAppender.Create);
 
 end.

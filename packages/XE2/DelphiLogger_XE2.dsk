@@ -1,37 +1,84 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas',0,1,66,1,70,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\9.0\source\rtl\win\Winapi.Windows.pas',0,1,31444,22,31458,0,0,,
-File_2=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,19228,1,19230,0,0,,{1
-File_3=TSourceModule,'C:\Desenvolvimento\Home\Converter\AiseTributosConverter\uMainForm.pas',0,1,155,28,162,0,0,,
-File_4=TSourceModule,'C:\Desenvolvimento\Home\Converter\AiseTributosConverter\core\Core.IO.RollingFileWriter.pas',0,1,1,1,1,0,0,,
-File_5=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\RepositoryDebitoMovimento.pas',0,1,1,6,8,0,0,,
-File_6=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\UnitTestSimAM\uDM.pas',0,1,47,80,9,0,0,,
-File_7=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\AiseExportManager.pas',0,1,1,62,5,0,0,,
-File_8=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\GeraDataToExport.pas',0,1,1,29,10,0,0,,{1
-File_9=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\DataToExportSimAMExport.pas',0,1,31,18,33,0,0,,
-File_10=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\uDiarioArrecadacaoAmExport.pas',0,1,1,50,8,0,0,,
-File_11=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\DiarioArrecadacao.pas',0,1,1,44,11,0,0,,
-File_12=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\RepositorySequencia.pas',0,1,50,1,64,0,0,,
-File_13=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\UnitTestSimAM\uTestRepositoryDebitoMovimento.pas',0,1,16,1,30,0,0,,
-File_14=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\IntegrationTests\uTestAiseExportManager.pas',0,1,43,50,53,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\VCL\Vcl.ComCtrls.pas',0,1,2134,1,2148,0,0,{{16831,0}
+File_1=TSourceModule,'C:\Desenvolvimento\OpenSource\Delphi\delphi-spring-framework\Source\Core\Services\Spring.Services.Logging.pas',0,1,70,1,86,0,0,{{41,4}
+File_2=TSourceModule,'C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.Spring.pas',0,1,22,41,41,0,0,,
+File_3=TSourceModule,'C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.RollingFileAppender.pas',0,1,36,5,45,0,0,,
+File_4=TSourceModule,'C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.Console.pas',0,1,16,1,1,0,0,,
+File_5=TSourceModule,'C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.IO.RollingFileWriter.pas',0,1,1,1,1,0,0,,
+File_6=TSourceModule,'c:\program files (x86)\embarcadero\rad studio\9.0\source\rtl\win\Winapi.Windows.pas',0,1,31444,22,31458,0,0,,
+File_7=TSourceModule,'C:\Desenvolvimento\Home\Converter\AiseTributosConverter\uMainForm.pas',0,1,155,28,162,0,0,,
+File_8=TSourceModule,'C:\Desenvolvimento\Home\Converter\AiseTributosConverter\core\Core.IO.RollingFileWriter.pas',0,1,1,1,1,0,0,,
+File_9=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\src\app_servidor\SimAm\RepositoryDebitoMovimento.pas',0,1,1,6,8,0,0,,
+File_10=TSourceModule,'C:\Desenvolvimento\Elotech\AiseTributTributacao\UnitTestSimAM\uDM.pas',0,1,47,80,9,0,0,,
 
 [Modules]
-Module0=C:\Desenvolvimento\OpenSource\fabricio\DelphiLogger\packages\XE2\DelphiLogger_XE2.dproj
+Module0=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas
 Module1=default.htm
-Count=2
+Module2=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\gui\Delphi.Log.GUI.pas
+Module3=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.DelegateAppender.pas
+Module4=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.Logger.pas
+Module5=c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.SysUtils.pas
+Module6=c:\program files (x86)\embarcadero\rad studio\9.0\source\rtl\common\System.Generics.Collections.pas
+Module7=c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.pas
+Module8=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.RichEditAppender.pas
+Count=9
 EditWindowCount=1
 
-[C:\Desenvolvimento\OpenSource\fabricio\DelphiLogger\packages\XE2\DelphiLogger_XE2.dproj]
-ModuleType=TBaseProject
+[C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
 
 [default.htm]
 ModuleType=TURLModule
 
+[C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\gui\Delphi.Log.GUI.pas]
+ModuleType=TSourceModule
+FormState=1
+FormOnTop=0
+
+[C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.DelegateAppender.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.Logger.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.SysUtils.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files (x86)\embarcadero\rad studio\9.0\source\rtl\common\System.Generics.Collections.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
+[C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.RichEditAppender.pas]
+ModuleType=TSourceModule
+FormState=0
+FormOnTop=0
+
 [EditWindow0]
-ViewCount=2
-CurrentEditView=C:\Desenvolvimento\OpenSource\fabricio\DelphiLogger\packages\XE2\DelphiLogger_XE2.dpk
+ViewCount=9
+CurrentEditView=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas
 View0=0
 View1=1
+View2=2
+View3=3
+View4=4
+View5=5
+View6=6
+View7=7
+View8=8
 PercentageSizes=1
 Create=1
 Visible=1
@@ -51,9 +98,9 @@ TopPanelSize=0
 LeftPanelSize=1896
 LeftPanelClients=PropertyInspector,DockSite3
 LeftPanelData=00000800010100000000280F0000000000000168070000000000000100000000580E000009000000446F636B53697465330100000000F51A00001100000050726F7065727479496E73706563746F72FFFFFFFF
-RightPanelSize=1999
+RightPanelSize=1977
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=00000800010100000000280F00000000000001CF0700000000000001000000004212000009000000446F636B53697465320100000000F51A000009000000446F636B5369746534FFFFFFFF
+RightPanelData=00000800010100000000280F00000000000001B90700000000000001000000004212000009000000446F636B53697465320100000000F51A000009000000446F636B5369746534FFFFFFFF
 BottomPanelSize=1549
 BottomPanelClients=DockSite1,MessageView
 BottomPanelData=0000080001020100000009000000446F636B53697465317A45000000000000020D0600000000000001000000007A4500000F0000004D65737361676556696577466F726DFFFFFFFF
@@ -67,14 +114,91 @@ WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
-Module=C:\Desenvolvimento\OpenSource\fabricio\DelphiLogger\packages\XE2\DelphiLogger_XE2.dpk
-CursorX=35
-CursorY=37
-TopLine=19
+Module=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\gui\Delphi.Log.GUI.pas
+CursorX=24
+CursorY=27
+TopLine=15
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Desenvolvimento\OpenSource\fabricio\DelphiLogger\packages\XE2\DelphiLogger_XE2.dpk
+EditViewName=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\gui\Delphi.Log.GUI.pas
+
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas
+CursorX=1
+CursorY=224
+TopLine=222
+LeftCol=1
+Elisions=
+Bookmarks={1,154,60}
+EditViewName=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas
+
+[View3]
+CustomEditViewType=TEditView
+Module=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.DelegateAppender.pas
+CursorX=90
+CursorY=8
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.DelegateAppender.pas
+
+[View4]
+CustomEditViewType=TEditView
+Module=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.Logger.pas
+CursorX=4
+CursorY=113
+TopLine=100
+LeftCol=1
+Elisions=
+Bookmarks={2,116,25}
+EditViewName=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.Logger.pas
+
+[View5]
+CustomEditViewType=TEditView
+Module=c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.SysUtils.pas
+CursorX=1
+CursorY=22116
+TopLine=22183
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.SysUtils.pas
+
+[View6]
+CustomEditViewType=TEditView
+Module=c:\program files (x86)\embarcadero\rad studio\9.0\source\rtl\common\System.Generics.Collections.pas
+CursorX=8
+CursorY=2177
+TopLine=2175
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=c:\program files (x86)\embarcadero\rad studio\9.0\source\rtl\common\System.Generics.Collections.pas
+
+[View7]
+CustomEditViewType=TEditView
+Module=c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.pas
+CursorX=1
+CursorY=14659
+TopLine=14654
+LeftCol=1
+Elisions=
+Bookmarks={2,14448,22}
+EditViewName=c:\program files (x86)\embarcadero\rad studio\9.0\SOURCE\RTL\SYS\System.pas
+
+[View8]
+CustomEditViewType=TEditView
+Module=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.RichEditAppender.pas
+CursorX=17
+CursorY=12
+TopLine=1
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.RichEditAppender.pas
 
 [Watches]
 Count=0
@@ -101,7 +225,8 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=0
+Count=1
+Breakpoint0='C:\Desenvolvimento\Elotech\EloComumLib\3rdParty\DelphiLogger\src\Delphi.Log.pas',224,'',0,1,'',1,0,0,'',1,'','','',0,''
 
 [EmbarcaderoWin64Debugger_AddressBreakpoints]
 Count=0
@@ -140,11 +265,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1999
+Width=1977
 Height=4217
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1999
+ClientWidth=1977
 ClientHeight=4217
 TBDockHeight=5893
 LRDockWidth=2350
@@ -178,11 +303,11 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1999
+Width=1977
 Height=2033
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1999
+ClientWidth=1977
 ClientHeight=2033
 TBDockHeight=7157
 LRDockWidth=1999
@@ -203,7 +328,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1896
 ClientHeight=3091
-TBDockHeight=8613
+TBDockHeight=6580
 LRDockWidth=1896
 Dockable=1
 StayOnTop=0
@@ -215,8 +340,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1093
-Top=-101
+Left=-1012
+Top=-37
 Width=2840
 Height=6209
 MaxLeft=-1
@@ -234,8 +359,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1229
-Top=-101
+Left=-1231
+Top=159
 Width=278
 Height=357
 MaxLeft=-1
@@ -277,12 +402,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=3821
-Height=1071
+Width=10000
+Height=1360
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=3821
-ClientHeight=1071
+ClientWidth=10000
+ClientHeight=1360
 TBDockHeight=220
 LRDockWidth=7408
 Dockable=1
@@ -339,11 +464,11 @@ State=0
 Left=0
 Top=0
 Width=2335
-Height=1140
+Height=893
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2335
-ClientHeight=1140
+ClientHeight=893
 TBDockHeight=2321
 LRDockWidth=2826
 Dockable=1
@@ -377,11 +502,11 @@ State=0
 Left=0
 Top=0
 Width=2335
-Height=907
+Height=1140
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2335
-ClientHeight=907
+ClientHeight=1140
 TBDockHeight=1154
 LRDockWidth=3675
 Dockable=1
@@ -403,12 +528,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1999
-Height=8269
+Width=1977
+Height=6236
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1999
-ClientHeight=8269
+ClientWidth=1977
+ClientHeight=6236
 TBDockHeight=4876
 LRDockWidth=7152
 Dockable=1
@@ -422,12 +547,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1999
-Height=8269
+Width=1977
+Height=6236
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1999
-ClientHeight=8269
+ClientWidth=1977
+ClientHeight=6236
 TBDockHeight=4876
 LRDockWidth=5307
 Dockable=1
@@ -440,7 +565,7 @@ Visible=0
 Docked=1
 State=0
 Left=-129
-Top=-101
+Top=-99
 Width=1845
 Height=3146
 MaxLeft=-1
@@ -498,12 +623,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=3821
-Height=1071
+Width=10000
+Height=1360
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=3821
-ClientHeight=1071
+ClientWidth=10000
+ClientHeight=1360
 TBDockHeight=1552
 LRDockWidth=8741
 Dockable=1
@@ -668,7 +793,7 @@ LRDockWidth=3858
 Dockable=1
 StayOnTop=0
 
-[Item__C74C7DBB_4D99_4FF4_BABE_F02A005254E6_]
+[Item__CE401FF6_F956_4BDB_9F54_088BD85F0CF4_]
 PercentageSizes=1
 Create=1
 Visible=0
@@ -687,7 +812,7 @@ LRDockWidth=3858
 Dockable=1
 StayOnTop=0
 
-[Item__CE401FF6_F956_4BDB_9F54_088BD85F0CF4_]
+[Item__C74C7DBB_4D99_4FF4_BABE_F02A005254E6_]
 PercentageSizes=1
 Create=1
 Visible=0
@@ -761,7 +886,7 @@ Visible=0
 Docked=1
 State=0
 Left=0
-Top=0
+Top=23
 Width=3821
 Height=1415
 MaxLeft=-1
@@ -786,14 +911,14 @@ Docked=1
 State=0
 Left=0
 Top=23
-Width=1999
+Width=1977
 Height=4560
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1999
+ClientWidth=1977
 ClientHeight=4560
-TBDockHeight=8613
-LRDockWidth=1999
+TBDockHeight=6580
+LRDockWidth=1977
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -816,7 +941,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1896
 ClientHeight=3503
-TBDockHeight=8613
+TBDockHeight=6580
 LRDockWidth=1896
 Dockable=1
 StayOnTop=0
@@ -834,14 +959,14 @@ Docked=1
 State=0
 Left=0
 Top=382
-Width=1999
+Width=1977
 Height=2033
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1999
+ClientWidth=1977
 ClientHeight=2033
-TBDockHeight=8613
-LRDockWidth=1999
+TBDockHeight=6580
+LRDockWidth=1977
 Dockable=1
 StayOnTop=0
 TabPosition=1

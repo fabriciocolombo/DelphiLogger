@@ -1,4 +1,4 @@
-unit Delphi.Log.CodeSite.ViewerAppender;
+unit DLogger.Log.CodeSite.ViewerAppender;
 
 interface
 

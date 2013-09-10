@@ -1,4 +1,4 @@
-unit Delphi.Log.CodeSite.FileAppender;
+unit DLogger.Log.CodeSite.FileAppender;
 
 interface
 

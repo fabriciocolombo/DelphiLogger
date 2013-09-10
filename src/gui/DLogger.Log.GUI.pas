@@ -1,10 +1,10 @@
-unit Delphi.Log.GUI;
+unit DLogger.Log.GUI;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Delphi.Log,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, DLogger.Log,
   Vcl.ExtCtrls;
 
 type
@@ -25,8 +25,6 @@ type
     FOnHide: TOnHideLog;
 
     procedure DoOnHide;
-
-    procedure WriteLog(const Level: TLogLevel; const Value: string);
   public
     constructor Create(AOwner: TComponent); override;
 
@@ -38,7 +36,7 @@ type
 implementation
 
 uses
-  Delphi.Log.DelegateAppender;
+  DLogger.Log.RichEditAppender;
 
 {$R *.dfm}
 
@@ -54,7 +52,7 @@ begin
   inherited;
   TFrm_Log.Instance := Self;
 
-  LoggerFactory.AddAppender(TDelegateAppender.Create(WriteLog));
+  LoggerFactory.AddAppender(TRichEditAppender.Create(Memo_Log));
 end;
 
 procedure TFrm_Log.DoOnHide;
@@ -98,20 +96,6 @@ class procedure TFrm_Log.ShowLog(AOnHide: TOnHideLog);
 begin
   TFrm_Log.Instance.FOnHide := AOnHide;
   TFrm_Log.Instance.Show;
-end;
-
-procedure TFrm_Log.WriteLog(const Level: TLogLevel; const Value: string);
-begin
-  case Level of
-    TLogLevel.ERROR,
-    TLogLevel.FATAL: Memo_Log.SelAttributes.Color := clRed;
-  else
-    Memo_Log.SelAttributes.Color := clWindowText;
-  end;
-
-  Memo_Log.Lines.Add(Value);
-
-  Application.ProcessMessages;
 end;
 
 class procedure TFrm_Log.ShowLog;

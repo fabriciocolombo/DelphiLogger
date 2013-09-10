@@ -1,8 +1,8 @@
-unit Delphi.Log.DelegateAppender;
+unit DLogger.Log.DelegateAppender;
 
 interface
 
-uses Delphi.Log;
+uses DLogger.Log;
 
 type
   TOnLogMessage = procedure (const Level: TLogLevel; const Value: string) of object;
