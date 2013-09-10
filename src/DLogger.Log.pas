@@ -88,8 +88,10 @@ type
   strict protected
     class constructor Create;
     class destructor Destroy;
+
   private
     procedure NotifyAppenders(const Level: TLogLevel; const Value: string);
+    class procedure Finalize;
   protected
     function CreateLogger(const Name: string): ILogger;virtual;
   public
@@ -162,6 +164,11 @@ begin
   TLoggerFactory.Instance := nil;
   TLoggerFactory.FSyncAppenders.Free;
   TLoggerFactory.FSyncLoggers.Free;
+end;
+
+class procedure TLoggerFactory.Finalize;
+begin
+  TLoggerFactory.Instance := nil;
 end;
 
 function TLoggerFactory.GetDefaultLogger: ILogger;
@@ -246,5 +253,8 @@ end;
 
 initialization
   TLoggerFactory.GetInstance;
+
+finalization
+  TLoggerFactory.Finalize;
 
 end.
