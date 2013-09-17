@@ -110,6 +110,15 @@ type
     procedure AfterConstruction; override;
   end;
 
+  TLoggable = class(TObject)
+  private
+    FLogger: ILogger;
+  protected
+    property Logger: ILogger read FLogger;
+  public
+    procedure AfterConstruction; override;
+  end;
+
 function LoggerFactory: ILoggerFactory;
 
 implementation
@@ -249,6 +258,14 @@ end;
 function TLoggerFactory.GetLogger(typeInfo: PTypeInfo): ILogger;
 begin
   Result := GetLogger(String(typeInfo^.Name));
+end;
+
+{ TLoggable }
+
+procedure TLoggable.AfterConstruction;
+begin
+  inherited;
+  FLogger := LoggerFactory.GetLogger(ClassType);
 end;
 
 initialization
