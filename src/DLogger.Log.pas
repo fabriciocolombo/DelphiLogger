@@ -232,6 +232,8 @@ begin
     finally
       FSyncLoggers.EndRead;
     end;
+
+    NotifyAppenders(TRACE, Format('LogLevel changed to %s', [GetEnumName(TypeInfo(TLogLevel), Ord(FLogLevel))]));
   end;
 end;
 

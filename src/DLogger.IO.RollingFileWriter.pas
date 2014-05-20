@@ -96,7 +96,7 @@ begin
   if FileIndex = 0 then
     vFile := FFileName
   else
-    vFile := Format('%s%3.3d%s', [ExtractFileName(FFileName), FileIndex, ExtractFileExt(FFileName)]);
+    vFile := Format('%s%3.3d%s', [TPath.GetFileNameWithoutExtension(FFileName), FileIndex, TPath.GetExtension(FFileName)]);
 
   Result := vFile;
 end;

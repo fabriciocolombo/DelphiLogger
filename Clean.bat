@@ -1,18 +1,18 @@
 @echo off
-echo Cleaning...
-del /f /q /s *.bak
-del /f /q /s *.dcu
-del /f /q /s *.ddp
-del /f /q /s *.~bpg
-del /f /q /s *.~dsk
-del /f /q /s *.~pas
-del /f /q /s *.~dfm
-del /f /q /s *.~ddp
-del /f /q /s *.~dpr
-del /f /q /s *.local
-del /f /q /s *.identcache
-del /f /q /s *.tvsconfig
-del /f /q /s *.bpl
-del /f /q /s *.dcp
-del /f /q /s *.exe
-del /f /q /s *.map
+echo Cleaning... 
+del /f /q /s %~dp0\*.bak
+del /f /q /s %~dp0\*.dcu
+del /f /q /s %~dp0\*.ddp
+del /f /q /s %~dp0\*.~bpg
+del /f /q /s %~dp0\*.~dsk
+del /f /q /s %~dp0\*.~pas
+del /f /q /s %~dp0\*.~dfm
+del /f /q /s %~dp0\*.~ddp
+del /f /q /s %~dp0\*.~dpr
+del /f /q /s %~dp0\*.local
+del /f /q /s %~dp0\*.identcache
+del /f /q /s %~dp0\*.tvsconfig
+del /f /q /s %~dp0\*.bpl
+del /f /q /s %~dp0\*.dcp
+del /f /q /s %~dp0\*.exe
+del /f /q /s %~dp0\*.map
