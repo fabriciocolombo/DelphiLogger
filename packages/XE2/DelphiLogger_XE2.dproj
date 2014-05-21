@@ -91,7 +91,6 @@
 			<DCCReference Include="rtl.dcp"/>
 			<DCCReference Include="vcl.dcp"/>
 			<DCCReference Include="vclimg.dcp"/>
-			<DCCReference Include="CodeSiteExpressPkg.dcp"/>
 			<DCCReference Include="..\..\src\gui\DLogger.Log.GUI.pas">
 				<Form>Frm_Log</Form>
 			</DCCReference>

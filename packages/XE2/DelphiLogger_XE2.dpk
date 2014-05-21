@@ -30,8 +30,7 @@ package DelphiLogger_XE2;
 requires
   rtl,
   vcl,
-  vclimg,
-  CodeSiteExpressPkg;
+  vclimg;
 
 contains
   DLogger.Log.GUI in '..\..\src\gui\DLogger.Log.GUI.pas' {Frm_Log},
