@@ -28,6 +28,12 @@
 			<CfgParent>Base</CfgParent>
 			<Base>true</Base>
 		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win64)'!=''">
+			<Cfg_1_Win64>true</Cfg_1_Win64>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
 		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
 			<Cfg_1_Win32>true</Cfg_1_Win32>
 			<CfgParent>Cfg_1</CfgParent>
@@ -39,13 +45,25 @@
 			<CfgParent>Base</CfgParent>
 			<Base>true</Base>
 		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
+			<Cfg_2_Win64>true</Cfg_2_Win64>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+			<Cfg_2_Win32>true</Cfg_2_Win32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base)'!=''">
+			<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
 			<DCC_OutputNeverBuildDcps>true</DCC_OutputNeverBuildDcps>
 			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 			<GenPackage>true</GenPackage>
 			<VerInfo_Locale>1046</VerInfo_Locale>
 			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
 			<DCC_UnitSearchPath>..\..\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 			<GenDll>true</GenDll>
 			<DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
@@ -65,7 +83,6 @@
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
-			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1)'!=''">
 			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -73,6 +90,10 @@
 			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
 			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Locale>1033</VerInfo_Locale>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -85,6 +106,14 @@
 			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
 			<DCC_DebugInformation>false</DCC_DebugInformation>
 		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+		</PropertyGroup>
 		<ItemGroup>
 			<DelphiCompile Include="$(MainSource)">
 				<MainSource>MainSource</MainSource>
@@ -92,16 +121,16 @@
 			<DCCReference Include="rtl.dcp"/>
 			<DCCReference Include="vcl.dcp"/>
 			<DCCReference Include="vclimg.dcp"/>
+			<DCCReference Include="..\..\src\DLogger.Log.pas"/>
+			<DCCReference Include="..\..\src\DLogger.Log.Logger.pas"/>
+			<DCCReference Include="..\..\src\DLogger.IO.RollingFileWriter.pas"/>
+			<DCCReference Include="..\..\src\DLogger.Log.DelegateAppender.pas"/>
+			<DCCReference Include="..\..\src\DLogger.Log.RichEditAppender.pas"/>
+			<DCCReference Include="..\..\src\DLogger.Log.RollingFileAppender.pas"/>
 			<DCCReference Include="..\..\src\gui\DLogger.Log.GUI.pas">
 				<Form>Frm_Log</Form>
 			</DCCReference>
-			<DCCReference Include="..\..\src\DLogger.IO.RollingFileWriter.pas"/>
 			<DCCReference Include="..\..\src\DLogger.Log.Console.pas"/>
-			<DCCReference Include="..\..\src\DLogger.Log.DelegateAppender.pas"/>
-			<DCCReference Include="..\..\src\DLogger.Log.Logger.pas"/>
-			<DCCReference Include="..\..\src\DLogger.Log.pas"/>
-			<DCCReference Include="..\..\src\DLogger.Log.RollingFileAppender.pas"/>
-			<DCCReference Include="..\..\src\DLogger.Log.RichEditAppender.pas"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -150,17 +179,18 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Excluded_Packages>
+						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\DelphiLogger_XE2.bpl">(untitled)</Excluded_Packages>
 						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\ContabilCore_XE2.bpl">Elotech Contábil Core</Excluded_Packages>
-						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\ElotechCore_XE2.bpl">File c:\users\public\documents\rad studio\9.0\bpl\ElotechCore_XE2.bpl not found</Excluded_Packages>
-						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\ContabilUtils.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\ElotechCore_XE2.bpl">Elotech Core</Excluded_Packages>
 						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\AiseCore_XE2.bpl">Elotech Aise Core</Excluded_Packages>
 						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\DXE2_ElotechComponents.bpl">Elotech Component - Frame Work®</Excluded_Packages>
+						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\EloExportUtils_XE2.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\WPTools6_XE2.bpl">WPTools for Delphi XE2	- WPCubed GmbH</Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\ContabilUtils.bpl">(untitled)</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\CR_ElotechComponents_XE2.bpl">Elotech Component - Frame Work® [Crystal Report]</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\REXE2_ElotechComponents.bpl">Elotech Component - Text Editor® [EloRichEdit]</Excluded_Packages>
-						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\WPTools6_XE2.bpl">WPTools for Delphi XE2	- WPCubed GmbH</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\agendador_components_xe2.bpl">Elotech Agendador Components</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\AiseTribTributacaoComponents.bpl">Elotech Tributos Components</Excluded_Packages>
-						<Excluded_Packages Name="c:\users\public\documents\rad studio\9.0\bpl\EloExportUtils_XE2.bpl">(untitled)</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\EloReportEngine.bpl">(untitled)</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\DelphiXE2_RestApi.bpl">(untitled)</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\Public\Documents\RAD Studio\9.0\Bpl\JclDebugExpert160.bpl">JCL Debug IDE extension</Excluded_Packages>

@@ -32,7 +32,7 @@ end;
 constructor TRollingFileAppender.Create(const AMaxFileSize,AMaxFileNumber: Integer);
 begin
   FWriter := TRollingFileWriter.Create;
-  FWriter.FileName := ExtractFileName(ChangeFileExt(GetModuleName(HInstance), '_log.log'));
+  FWriter.FileName := ExtractFilePath(ParamStr(0)) + ExtractFileName(ChangeFileExt(GetModuleName(HInstance), '_log.log'));
   FWriter.MaxFileSize := AMaxFileSize;
   FWriter.MaxFileNumber := AMaxFileNumber;
   FWriter.StartThread;

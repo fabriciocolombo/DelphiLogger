@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.TypInfo, Generics.Collections, Winapi.Windows,
-  System.Classes, System.IOUtils, System.SyncObjs, System.TimeSpan;
+  System.Classes, System.TimeSpan;
 
 type
   TLogLevel = (TRACE, DEBUG, INFO, WARNING, ERROR, FATAL, OFF);
@@ -85,7 +85,7 @@ type
     class var FLogLevel: TLogLevel;
     class var FSyncAppenders: TMultiReadExclusiveWriteSynchronizer;
     class var FSyncLoggers: TMultiReadExclusiveWriteSynchronizer;
-  strict protected
+  strict private
     class constructor Create;
     class destructor Destroy;
 
@@ -123,7 +123,7 @@ function LoggerFactory: ILoggerFactory;
 
 implementation
 
-uses DLogger.Log.RollingFileAppender, DLogger.Log.Logger;
+uses DLogger.Log.Logger;
 
 function LoggerFactory: ILoggerFactory;
 begin

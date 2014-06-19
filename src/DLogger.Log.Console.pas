@@ -12,6 +12,8 @@ type
   public
     procedure Append(const Level: TLogLevel; const Value: string);
     procedure AfterConstruction; override;
+
+    class procedure RegisterAppender;static;
   end;
 
 implementation
@@ -45,7 +47,9 @@ begin
   end;
 end;
 
-initialization
-  DLogger.Log.LoggerFactory.AddAppender(TConsoleAppender.Create);
+class procedure TConsoleAppender.RegisterAppender;
+begin
+	DLogger.Log.LoggerFactory.AddAppender(TConsoleAppender.Create);
+end;
 
 end.

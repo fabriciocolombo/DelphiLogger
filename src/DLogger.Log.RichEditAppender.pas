@@ -26,8 +26,7 @@ type
 
 implementation
 
-uses
-  DLogger.Log.DelegateAppender;
+
 
 { TRichEditAppender }
 

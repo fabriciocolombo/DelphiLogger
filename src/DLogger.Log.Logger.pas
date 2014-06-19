@@ -2,8 +2,7 @@ unit DLogger.Log.Logger;
 
 interface
 
-uses DLogger.Log,
-     System.Generics.Collections, System.SysUtils;
+uses DLogger.Log, System.SysUtils;
 
 type
   TLogger = class(TInterfacedObject, ILogger)
